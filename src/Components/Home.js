@@ -40,6 +40,8 @@ export const Home = () => {
                 monthlyPayment: 'N/A',
             }));
         }
+
+
     };
 
     const inputs = [
@@ -91,15 +93,18 @@ export const Home = () => {
                     ))}
                 </div>
                 <div className="d-grid">
-                    <Button variant="warning p-3" className="text-dark" type="submit">
+                    <Button variant="warning p-3" className="text-dark rounded" type="submit">
                         Calculate
                     </Button>
                 </div>
 
                 {formData.monthlyPayment && (
-                    <div className="bg-dark text-light p-4 text-center mt-4">
-                        Monthly Payment: ${formData.monthlyPayment}
+                    <div className="bg-dark text-light p-3 text-center mt-4 rounded shadow-lg">
+                        <h3>
+                            Monthly Payment: ${formData.monthlyPayment}
+                        </h3>
                     </div>
+
                 )}
             </Form>
         </Container>
