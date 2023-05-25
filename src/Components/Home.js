@@ -79,7 +79,7 @@ export const Home = () => {
 
     return (
         <Container className="mt-4 mb-2">
-            <Form className="border p-5 shadow-lg rounded m-auto" style={{ width: '450px' }} onSubmit={handleOnSubmit}>
+            <Form className="border p-5 shadow-lg rounded m-auto" onSubmit={handleOnSubmit}>
                 <h2 className="text-dark fw-bolder mb-3 text-center">Finance Calculator</h2>
                 <Form.Text>
                     The Finance Calculator provides a seamless experience for users to calculate their mortgage payments and make informed financial decisions.
