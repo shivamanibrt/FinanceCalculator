@@ -17,9 +17,7 @@ export const Home = () => {
         e.preventDefault();
         const { propertyPrice, interestRate, loanTerm, downPayment } = formData;
 
-        if (interestRate < 0 || propertyPrice <= downPayment) {
-            return;
-        }
+
 
         const loanAmount = propertyPrice - downPayment;
         const monthlyInterestRate = interestRate / 100 / 12;
@@ -29,17 +27,11 @@ export const Home = () => {
             (loanAmount * monthlyInterestRate) /
             (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
 
-        if (isFinite(monthlyPayment)) {
-            setFormData((prevData) => ({
-                ...prevData,
-                monthlyPayment: monthlyPayment.toFixed(3), // Rounded to 2 decimal places
-            }));
-        } else {
-            setFormData((prevData) => ({
-                ...prevData,
-                monthlyPayment: 'N/A',
-            }));
-        }
+
+        setFormData((prevData) => ({
+            ...prevData,
+            monthlyPayment: monthlyPayment.toFixed(3), // Rounded to 2 decimal places
+        }));
 
 
     };
